@@ -3,6 +3,7 @@ import UIKit
 public enum ImageViewerTheme {
     case light
     case dark
+    case custom(background: UIColor, foreground: UIColor)
     
     var color:UIColor {
         switch self {
@@ -10,6 +11,8 @@ public enum ImageViewerTheme {
                 return .white
             case .dark:
                 return .black
+            case .custom(let background, _):
+                return background
         }
     }
     
@@ -19,6 +22,8 @@ public enum ImageViewerTheme {
                 return .black
             case .dark:
                 return .white
+            case .custom(_ , let foreground):
+                return foreground
         }
     }
 }
