@@ -91,7 +91,8 @@ class ImageCarouselViewController:UIPageViewController, ImageViewerTransitionVie
         
         navItem.leftBarButtonItem = closeBarButton
         navItem.leftBarButtonItem?.tintColor = theme.tintColor
-        navBar.alpha = 0.0
+        navBar.alpha = 1.0
+        navBar.backgroundColor = theme.color
         navBar.items = [navItem]
         navBar.insert(to: view)
     }
@@ -118,6 +119,8 @@ class ImageCarouselViewController:UIPageViewController, ImageViewerTransitionVie
                         target: self,
                         action: #selector(diTapRightNavBarItem(_:)))
                     onRightNavBarTapped = onTap
+                    navItem.rightBarButtonItem?.tintColor = theme.tintColor
+
                 case .rightNavItemIcon(let icon, let onTap):
                     navItem.rightBarButtonItem = UIBarButtonItem(
                         image: icon,
@@ -125,6 +128,8 @@ class ImageCarouselViewController:UIPageViewController, ImageViewerTransitionVie
                         target: self,
                         action: #selector(diTapRightNavBarItem(_:)))
                     onRightNavBarTapped = onTap
+                    navItem.rightBarButtonItem?.tintColor = theme.tintColor
+
             }
         }
     }
