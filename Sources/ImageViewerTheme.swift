@@ -27,3 +27,5 @@ public enum ImageViewerTheme {
         }
     }
 }
+
+extension ImageViewerTheme: Equatable { }
